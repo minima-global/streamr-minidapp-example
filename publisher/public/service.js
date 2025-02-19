@@ -1,4 +1,4 @@
-var STREAM_ID = "0x8f652892c780f063ee81288275c6fa860f024a9d/minima/peers/dev";
+var STREAM_ID = "0x8f652892c780f063ee81288275c6fa860f024a9d/minima/peers/example";
 var ENCODED_STREAM_ID = encodeURIComponent(STREAM_ID);
 var STREAMR_NODE_HOST = "http://localhost:7171";
 
@@ -38,6 +38,7 @@ MDS.init(function(msg) {
           MDS.log("Streamr message was published successfully!");
           MDS.sql("INSERT INTO `logs` VALUES ('" + dataAsString + "', 1, " + new Date().getTime() + ")");
         } else {
+          MDS.log(JSON.stringify(response));
           MDS.log("Streamr message could not sent published!");
           MDS.sql("INSERT INTO `logs` VALUES ('" + dataAsString + "', 0, " + new Date().getTime() + ")");
         }

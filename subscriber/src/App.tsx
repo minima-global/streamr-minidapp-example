@@ -1,22 +1,18 @@
 import { useEffect, useRef, useState } from 'react'
-import { StreamrClient } from '@streamr/sdk'
+import { EnvironmentId, StreamrClient } from '@streamr/sdk'
 
 // The stream id that was generated in the first section
-const STREAM_ID = '0x8f652892c780f063ee81288275c6fa860f024a9d/minima/peers/dev'
+const STREAM_ID = '0x8f652892c780f063ee81288275c6fa860f024a9d/minima/peers/example'
 
-var ENVIRONMENT = "polygon";
+var ENVIRONMENT: EnvironmentId = "polygon";
 
 const streamrClient = new StreamrClient({
   environment: ENVIRONMENT
 })
 
-// we're loading MDS from the window
-// eslint-disable-next-line
-const MDS = window.MDS
-
 function App() {
   const loaded = useRef(false)
-  const [content, setContent] = useState([]);
+  const [content, setContent] = useState<string[]>([]);
 
   useEffect(() => {
     if (!loaded.current) {
@@ -26,8 +22,10 @@ function App() {
         if (msg.event === 'inited') {
           streamrClient.subscribe(STREAM_ID, (content) => {
 
+            console.log(content);
+
             // store the content into the array while keeping the previous content stored
-            setContent(prevState => [...prevState, content]);
+            setContent(prevState => [...prevState, content as string]);
           })
         }
       })
@@ -49,6 +47,13 @@ function App() {
               </tr>
               </thead>
               <tbody>
+              {content.length === 0 && (
+                <tr className="bg-white dark:bg-gray-800">
+                  <td colSpan={2} className="px-6 py-4">
+                    Waiting for content...
+                  </td>
+                </tr>
+              )}
               {content.map((log) => (
                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                   <th scope="row"

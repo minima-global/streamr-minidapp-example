@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { format } from 'date-fns'
 
-// eslint-disable-next-line
-const MDS = (window as any).MDS
-
 function App() {
   const loaded = useRef(false)
   const [logs, setLogs] = useState<{ MESSAGE: string; STATUS: string; DATETIME: string }[] | null>(null);

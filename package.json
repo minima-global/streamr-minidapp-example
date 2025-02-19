@@ -1,0 +1,12 @@
+{
+  "name": "streamr-minidapp-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd ./subscriber && npm run zip && cd ../publisher && npm run zip"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
