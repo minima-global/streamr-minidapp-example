@@ -1,0 +1,40 @@
+{
+  "name": "streamr-subscriber",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "package": "bash ./create-minima-app/package.sh",
+    "postbuild": "node ./create-minima-app/postbuild.js",
+    "zip": "npm run build && npm run postbuild && npm run package"
+  },
+  "dependencies": {
+    "@streamr/sdk": "^101.1.2",
+    "@tsparticles/react": "^3.0.0",
+    "@vitejs/plugin-legacy": "^4.1.1",
+    "@vitejs/plugin-react-swc": "^3.4.1",
+    "autoprefixer": "^10.4.16",
+    "decimal.js": "^10.4.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "streamr-client": "^8.5.5",
+    "tailwindcss": "^3.3.5",
+    "vite-plugin-html": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  }
+}
