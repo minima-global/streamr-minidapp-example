@@ -208,7 +208,7 @@ MDS.init(function(msg) {
   // One time event that is triggered when MDS is initialised
   if (msg.event === 'inited') {
 
-		MDS.log("Streamr Publisher Example - Started!");
+    MDS.log("Streamr Publisher Example - Started!");
 
     // create logs table
     MDS.sql("CREATE TABLE IF NOT EXISTS `logs` (`message` varchar(1024) NOT NULL, `status` smallint NOT NULL, `datetime` bigint NOT NULL)");
