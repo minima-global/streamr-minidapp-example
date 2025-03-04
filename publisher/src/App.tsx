@@ -24,8 +24,8 @@ function App() {
   }, [loaded]);
 
   return (
-    <div className="h-screen w-screen p-4">
-      <div>
+    <div className="h-screen w-screen">
+      <div className="p-4">
         <h1 className="text-2xl mb-4">Publisher - Logs</h1>
         <div>
           <div className="relative overflow-x-auto">
