@@ -343,6 +343,8 @@ export default App
 
 Now that the **Streamr Publisher Minidapp** is completed, let's build and zip the project into a file so that we can install it via the **MiniHub** or the Minima command line. Once the MiniDapp is installed, uou should see the following messages in your Minima **Terminal**.
 
+> To build the project, you can run `npm run zip` in the `publisher` directory. In the case you cloned the project, you can run `npm run zip` in the repository root to build both the publisher and the subscriber.
+
 ```jsx
 Minima @ 13/09/2024 14:45:32 [294.5 MB] : MDS_Streamr-server_0xC03A90BC9E32FD92E07525E0BE28D35E3B7BCBCD7D86AA1344E8B0F22E35465D > Streamr Publisher Example - Started!
 Minima @ 13/09/2024 14:45:32 [294.5 MB] : MDS_Streamr-server_0xC03A90BC9E32FD92E07525E0BE28D35E3B7BCBCD7D86AA1344E8B0F22E35465D > Streamr message was published successfully!
@@ -458,6 +460,8 @@ export default App
 And that's the **Subscriber MiniDapp** done.
 
 Build and zip the Minidapp and install it via the **Minihub** or command line. Once it’s installed, open the **Subscriber MiniDapp** and you will see something like this if your **Streamr Publisher MiniDapp** is running from the previous section.
+
+> To build the project, you can run `npm run zip` in the `publisher` directory. In the case you cloned the project, you can run `npm run zip` in the repository root to build both the publisher and the subscriber.
 
 ![Screenshot_2024-09-13_at_16 06 48](https://github.com/user-attachments/assets/51f56422-dc59-4dba-9892-e1c4141dddd1)
 
