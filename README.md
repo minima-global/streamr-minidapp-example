@@ -121,6 +121,8 @@ Copy & paste the script below into the command line or open the script in a code
 
 `ENVIRONMENT` - “polygon” or “polygon-amoy”
 
+> Please ensure the `PRIVATE_KEY` is the same key as the key you used to generate the STREAMR STREAM ID or you have permission to push to the stream if it was created using a different key. You can grant permission to a streamr by following the documentation on the streamr website here: https://docs.streamr.network/usage/streams/permissions/#grant--revoke-user-permissions
+
 ```jsx
 const Streamr = require("@streamr/sdk");
 const { StreamPermission } = require("@streamr/sdk");
@@ -183,6 +185,8 @@ Now that you know how to set up a Minidapp, you can now `cd` into our **Publishe
 cd ./streamr-publisher-minidapp && touch service.js && nano service.js
 
 ```
+
+> :warning: Please ensure you run `npm install` if you have cloned the example code from Github
 
 You will need to edit the `STREAM_ID` variable to the stream id that was generated earlier in the tutorial. You can leave the other variables if you have not changed the default port number that the **Streamr** node runs on. If you have allocated a custom port, edit the `STREAMR_NODE_HOST` variable.
 
@@ -373,6 +377,8 @@ First, let's `cd` into the **MiniDapp** directory and install `@streamr/sdk` via
 cd ./streamr-subscriber-minidapp && npm i @streamr/sdk
 
 ```
+
+> :warning: Please ensure you run `npm install` if you have cloned the example code from Github
 
 Open up the `App.tsx` and add the following code. Since our **Streamr** stream is public accessibly by anyone, we do not need to specify an private key.
 
